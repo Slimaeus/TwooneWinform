@@ -1,0 +1,16 @@
+F:\University\LapTrinhWindow\Twoone\QuanLyPhim\QuanLyPhim\bin\Debug\QuanLyPhim.exe.config
+F:\University\LapTrinhWindow\Twoone\QuanLyPhim\QuanLyPhim\bin\Debug\QuanLyPhim.exe
+F:\University\LapTrinhWindow\Twoone\QuanLyPhim\QuanLyPhim\bin\Debug\QuanLyPhim.pdb
+F:\University\LapTrinhWindow\Twoone\QuanLyPhim\QuanLyPhim\obj\Debug\QuanLyPhim.csproj.AssemblyReference.cache
+F:\University\LapTrinhWindow\Twoone\QuanLyPhim\QuanLyPhim\obj\Debug\QuanLyPhim.csproj.SuggestedBindingRedirects.cache
+F:\University\LapTrinhWindow\Twoone\QuanLyPhim\QuanLyPhim\obj\Debug\QuanLyPhim.Form1.resources
+F:\University\LapTrinhWindow\Twoone\QuanLyPhim\QuanLyPhim\obj\Debug\QuanLyPhim.Properties.Resources.resources
+F:\University\LapTrinhWindow\Twoone\QuanLyPhim\QuanLyPhim\obj\Debug\QuanLyPhim.csproj.GenerateResource.cache
+F:\University\LapTrinhWindow\Twoone\QuanLyPhim\QuanLyPhim\obj\Debug\QuanLyPhim.csproj.CoreCompileInputs.cache
+F:\University\LapTrinhWindow\Twoone\QuanLyPhim\QuanLyPhim\obj\Debug\QuanLyPhim.exe
+F:\University\LapTrinhWindow\Twoone\QuanLyPhim\QuanLyPhim\obj\Debug\QuanLyPhim.pdb
+F:\University\LapTrinhWindow\Twoone\QuanLyPhim\QuanLyPhim\bin\Debug\EntityFramework.dll
+F:\University\LapTrinhWindow\Twoone\QuanLyPhim\QuanLyPhim\bin\Debug\EntityFramework.SqlServer.dll
+F:\University\LapTrinhWindow\Twoone\QuanLyPhim\QuanLyPhim\bin\Debug\EntityFramework.xml
+F:\University\LapTrinhWindow\Twoone\QuanLyPhim\QuanLyPhim\bin\Debug\EntityFramework.SqlServer.xml
+F:\University\LapTrinhWindow\Twoone\QuanLyPhim\QuanLyPhim\obj\Debug\QuanLyPhim.csproj.CopyComplete

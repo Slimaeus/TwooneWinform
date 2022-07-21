@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="bbf45e062af84723970f13d331d8231a" Name="Diagram1">
+        <EntityTypeShape EntityType="TwooneModel.Admin" Width="1.5" PointX="7.75" PointY="2.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="TwooneModel.DanhGiaPhim" Width="1.5" PointX="5.25" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="TwooneModel.DaoDien" Width="1.5" PointX="0.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TwooneModel.DatNuoc" Width="1.5" PointX="0.75" PointY="2.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="TwooneModel.DienVien" Width="1.5" PointX="3" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TwooneModel.DienVienDongPhim" Width="1.5" PointX="5.25" PointY="2.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="TwooneModel.GoiDichVu" Width="1.5" PointX="6" PointY="14.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="TwooneModel.HashTag" Width="1.5" PointX="0.75" PointY="8.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="TwooneModel.NgonNgu" Width="1.5" PointX="0.75" PointY="11.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="TwooneModel.NguoiDung" Width="1.5" PointX="3" PointY="10.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="TwooneModel.PhieuDangKy" Width="1.5" PointX="8.25" PointY="10.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="TwooneModel.Phim" Width="1.5" PointX="3" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="TwooneModel.TheLoai" Width="1.5" PointX="5.25" PointY="11.875" IsExpanded="true" />
+        <AssociationConnector Association="TwooneModel.FK__DanhGiaPh__MaNgu__4CA06362" ManuallyRouted="false" />
+        <AssociationConnector Association="TwooneModel.FK__DanhGiaPh__MaPhi__4BAC3F29" ManuallyRouted="false" />
+        <AssociationConnector Association="TwooneModel.FK__Phim__MaNuoc__300424B4" ManuallyRouted="false" />
+        <AssociationConnector Association="TwooneModel.FK__DienVienD__MaDie__1EA48E88" ManuallyRouted="false" />
+        <AssociationConnector Association="TwooneModel.FK__DienVienD__MaPhi__1DB06A4F" ManuallyRouted="false" />
+        <AssociationConnector Association="TwooneModel.FK__PhieuDang__MaGoi__625A9A57" ManuallyRouted="false" />
+        <AssociationConnector Association="TwooneModel.FK__Phim__MaNgonNgu__30F848ED" ManuallyRouted="false" />
+        <AssociationConnector Association="TwooneModel.FK__PhieuDang__MaNgu__634EBE90" ManuallyRouted="false" />
+        <AssociationConnector Association="TwooneModel.DaoDienCuaPhim" ManuallyRouted="false" />
+        <AssociationConnector Association="TwooneModel.HashTagCuaPhim" ManuallyRouted="false" />
+        <AssociationConnector Association="TwooneModel.TheLoaiCuaPhim" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

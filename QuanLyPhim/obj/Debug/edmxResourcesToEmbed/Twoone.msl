@@ -1,0 +1,170 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="TwooneModelStoreContainer" CdmEntityContainer="TwooneEntities">
+    <EntitySetMapping Name="Admins">
+      <EntityTypeMapping TypeName="TwooneModel.Admin">
+        <MappingFragment StoreEntitySet="Admin">
+          <ScalarProperty Name="MaAdmin" ColumnName="MaAdmin" />
+          <ScalarProperty Name="TaiKhoanAdmin" ColumnName="TaiKhoanAdmin" />
+          <ScalarProperty Name="MatKhauAdmin" ColumnName="MatKhauAdmin" />
+          <ScalarProperty Name="TenAdmin" ColumnName="TenAdmin" />
+          <ScalarProperty Name="EmailAdmin" ColumnName="EmailAdmin" />
+          <ScalarProperty Name="NgayKhoiTao" ColumnName="NgayKhoiTao" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DanhGiaPhims">
+      <EntityTypeMapping TypeName="TwooneModel.DanhGiaPhim">
+        <MappingFragment StoreEntitySet="DanhGiaPhim">
+          <ScalarProperty Name="MaDanhGia" ColumnName="MaDanhGia" />
+          <ScalarProperty Name="MaPhim" ColumnName="MaPhim" />
+          <ScalarProperty Name="MaNguoiDung" ColumnName="MaNguoiDung" />
+          <ScalarProperty Name="ThoiGianBinhLuan" ColumnName="ThoiGianBinhLuan" />
+          <ScalarProperty Name="NoiDungBinhLuan" ColumnName="NoiDungBinhLuan" />
+          <ScalarProperty Name="SoSao" ColumnName="SoSao" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DaoDiens">
+      <EntityTypeMapping TypeName="TwooneModel.DaoDien">
+        <MappingFragment StoreEntitySet="DaoDien">
+          <ScalarProperty Name="MaDaoDien" ColumnName="MaDaoDien" />
+          <ScalarProperty Name="TenDaoDien" ColumnName="TenDaoDien" />
+          <ScalarProperty Name="HinhAnhDaoDien" ColumnName="HinhAnhDaoDien" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DatNuocs">
+      <EntityTypeMapping TypeName="TwooneModel.DatNuoc">
+        <MappingFragment StoreEntitySet="DatNuoc">
+          <ScalarProperty Name="MaNuoc" ColumnName="MaNuoc" />
+          <ScalarProperty Name="TenNuoc" ColumnName="TenNuoc" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DienViens">
+      <EntityTypeMapping TypeName="TwooneModel.DienVien">
+        <MappingFragment StoreEntitySet="DienVien">
+          <ScalarProperty Name="MaDienVien" ColumnName="MaDienVien" />
+          <ScalarProperty Name="TenDienVien" ColumnName="TenDienVien" />
+          <ScalarProperty Name="HinhAnhDienVien" ColumnName="HinhAnhDienVien" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DienVienDongPhims">
+      <EntityTypeMapping TypeName="TwooneModel.DienVienDongPhim">
+        <MappingFragment StoreEntitySet="DienVienDongPhim">
+          <ScalarProperty Name="MaPhim" ColumnName="MaPhim" />
+          <ScalarProperty Name="MaDienVien" ColumnName="MaDienVien" />
+          <ScalarProperty Name="TenVaiDien" ColumnName="TenVaiDien" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GoiDichVus">
+      <EntityTypeMapping TypeName="TwooneModel.GoiDichVu">
+        <MappingFragment StoreEntitySet="GoiDichVu">
+          <ScalarProperty Name="MaGoiDV" ColumnName="MaGoiDV" />
+          <ScalarProperty Name="TenGoiDV" ColumnName="TenGoiDV" />
+          <ScalarProperty Name="GiaGoiDV" ColumnName="GiaGoiDV" />
+          <ScalarProperty Name="MoTaGoiDichVu" ColumnName="MoTaGoiDichVu" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HashTags">
+      <EntityTypeMapping TypeName="TwooneModel.HashTag">
+        <MappingFragment StoreEntitySet="HashTag">
+          <ScalarProperty Name="MaHashTag" ColumnName="MaHashTag" />
+          <ScalarProperty Name="TenTag" ColumnName="TenTag" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NgonNgus">
+      <EntityTypeMapping TypeName="TwooneModel.NgonNgu">
+        <MappingFragment StoreEntitySet="NgonNgu">
+          <ScalarProperty Name="MaNgonNgu" ColumnName="MaNgonNgu" />
+          <ScalarProperty Name="TenNgonNgu" ColumnName="TenNgonNgu" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NguoiDungs">
+      <EntityTypeMapping TypeName="TwooneModel.NguoiDung">
+        <MappingFragment StoreEntitySet="NguoiDung">
+          <ScalarProperty Name="MaNguoiDung" ColumnName="MaNguoiDung" />
+          <ScalarProperty Name="HoTen" ColumnName="HoTen" />
+          <ScalarProperty Name="GioiTinh" ColumnName="GioiTinh" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="SDT" ColumnName="SDT" />
+          <ScalarProperty Name="NgaySinh" ColumnName="NgaySinh" />
+          <ScalarProperty Name="TaiKhoan" ColumnName="TaiKhoan" />
+          <ScalarProperty Name="MatKhau" ColumnName="MatKhau" />
+          <ScalarProperty Name="HinhAnhNguoiDung" ColumnName="HinhAnhNguoiDung" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PhieuDangKies">
+      <EntityTypeMapping TypeName="TwooneModel.PhieuDangKy">
+        <MappingFragment StoreEntitySet="PhieuDangKy">
+          <ScalarProperty Name="MaPhieuDangKy" ColumnName="MaPhieuDangKy" />
+          <ScalarProperty Name="MaGoiDV" ColumnName="MaGoiDV" />
+          <ScalarProperty Name="MaNguoiDung" ColumnName="MaNguoiDung" />
+          <ScalarProperty Name="NgayThanhToan" ColumnName="NgayThanhToan" />
+          <ScalarProperty Name="NgayHetHan" ColumnName="NgayHetHan" />
+          <ScalarProperty Name="KhuyenMai" ColumnName="KhuyenMai" />
+          <ScalarProperty Name="ThanhTien" ColumnName="ThanhTien" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Phims">
+      <EntityTypeMapping TypeName="TwooneModel.Phim">
+        <MappingFragment StoreEntitySet="Phim">
+          <ScalarProperty Name="MaPhim" ColumnName="MaPhim" />
+          <ScalarProperty Name="TenPhim" ColumnName="TenPhim" />
+          <ScalarProperty Name="NgaySanXuat" ColumnName="NgaySanXuat" />
+          <ScalarProperty Name="NoiDungPhim" ColumnName="NoiDungPhim" />
+          <ScalarProperty Name="NoiDungPhimTomTat" ColumnName="NoiDungPhimTomTat" />
+          <ScalarProperty Name="DiemIMDB" ColumnName="DiemIMDB" />
+          <ScalarProperty Name="LuotXem" ColumnName="LuotXem" />
+          <ScalarProperty Name="ThoiLuong" ColumnName="ThoiLuong" />
+          <ScalarProperty Name="HinhBanner" ColumnName="HinhBanner" />
+          <ScalarProperty Name="LinkPhim" ColumnName="LinkPhim" />
+          <ScalarProperty Name="LinkPhimVip" ColumnName="LinkPhimVip" />
+          <ScalarProperty Name="TrailerPhim" ColumnName="TrailerPhim" />
+          <ScalarProperty Name="MaNuoc" ColumnName="MaNuoc" />
+          <ScalarProperty Name="MaNgonNgu" ColumnName="MaNgonNgu" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TheLoais">
+      <EntityTypeMapping TypeName="TwooneModel.TheLoai">
+        <MappingFragment StoreEntitySet="TheLoai">
+          <ScalarProperty Name="MaTheLoai" ColumnName="MaTheLoai" />
+          <ScalarProperty Name="TenTheLoai" ColumnName="TenTheLoai" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="DaoDienCuaPhim" TypeName="TwooneModel.DaoDienCuaPhim" StoreEntitySet="DaoDienCuaPhim">
+      <EndProperty Name="DaoDien">
+        <ScalarProperty Name="MaDaoDien" ColumnName="MaDaoDien" />
+      </EndProperty>
+      <EndProperty Name="Phim">
+        <ScalarProperty Name="MaPhim" ColumnName="MaPhim" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="HashTagCuaPhim" TypeName="TwooneModel.HashTagCuaPhim" StoreEntitySet="HashTagCuaPhim">
+      <EndProperty Name="HashTag">
+        <ScalarProperty Name="MaHashTag" ColumnName="MaHashTag" />
+      </EndProperty>
+      <EndProperty Name="Phim">
+        <ScalarProperty Name="MaPhim" ColumnName="MaPhim" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="TheLoaiCuaPhim" TypeName="TwooneModel.TheLoaiCuaPhim" StoreEntitySet="TheLoaiCuaPhim">
+      <EndProperty Name="Phim">
+        <ScalarProperty Name="MaPhim" ColumnName="MaPhim" />
+      </EndProperty>
+      <EndProperty Name="TheLoai">
+        <ScalarProperty Name="MaTheLoai" ColumnName="MaTheLoai" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping>

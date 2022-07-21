@@ -1,0 +1,337 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="TwooneModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Admin">
+    <Key>
+      <PropertyRef Name="MaAdmin" />
+    </Key>
+    <Property Name="MaAdmin" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TaiKhoanAdmin" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="MatKhauAdmin" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="TenAdmin" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="EmailAdmin" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="NgayKhoiTao" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="DanhGiaPhim">
+    <Key>
+      <PropertyRef Name="MaDanhGia" />
+    </Key>
+    <Property Name="MaDanhGia" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MaPhim" Type="Int32" Nullable="false" />
+    <Property Name="MaNguoiDung" Type="Int32" Nullable="false" />
+    <Property Name="ThoiGianBinhLuan" Type="DateTime" Precision="3" />
+    <Property Name="NoiDungBinhLuan" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="SoSao" Type="Int32" />
+    <NavigationProperty Name="NguoiDung" Relationship="Self.FK__DanhGiaPh__MaNgu__4CA06362" FromRole="DanhGiaPhim" ToRole="NguoiDung" />
+    <NavigationProperty Name="Phim" Relationship="Self.FK__DanhGiaPh__MaPhi__4BAC3F29" FromRole="DanhGiaPhim" ToRole="Phim" />
+  </EntityType>
+  <EntityType Name="DaoDien">
+    <Key>
+      <PropertyRef Name="MaDaoDien" />
+    </Key>
+    <Property Name="MaDaoDien" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TenDaoDien" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="HinhAnhDaoDien" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Phims" Relationship="Self.DaoDienCuaPhim" FromRole="DaoDien" ToRole="Phim" />
+  </EntityType>
+  <EntityType Name="DatNuoc">
+    <Key>
+      <PropertyRef Name="MaNuoc" />
+    </Key>
+    <Property Name="MaNuoc" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TenNuoc" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Phims" Relationship="Self.FK__Phim__MaNuoc__300424B4" FromRole="DatNuoc" ToRole="Phim" />
+  </EntityType>
+  <EntityType Name="DienVien">
+    <Key>
+      <PropertyRef Name="MaDienVien" />
+    </Key>
+    <Property Name="MaDienVien" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TenDienVien" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="HinhAnhDienVien" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="DienVienDongPhims" Relationship="Self.FK__DienVienD__MaDie__1EA48E88" FromRole="DienVien" ToRole="DienVienDongPhim" />
+  </EntityType>
+  <EntityType Name="DienVienDongPhim">
+    <Key>
+      <PropertyRef Name="MaPhim" />
+      <PropertyRef Name="MaDienVien" />
+    </Key>
+    <Property Name="MaPhim" Type="Int32" Nullable="false" />
+    <Property Name="MaDienVien" Type="Int32" Nullable="false" />
+    <Property Name="TenVaiDien" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="DienVien" Relationship="Self.FK__DienVienD__MaDie__1EA48E88" FromRole="DienVienDongPhim" ToRole="DienVien" />
+    <NavigationProperty Name="Phim" Relationship="Self.FK__DienVienD__MaPhi__1DB06A4F" FromRole="DienVienDongPhim" ToRole="Phim" />
+  </EntityType>
+  <EntityType Name="GoiDichVu">
+    <Key>
+      <PropertyRef Name="MaGoiDV" />
+    </Key>
+    <Property Name="MaGoiDV" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TenGoiDV" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="GiaGoiDV" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="MoTaGoiDichVu" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="PhieuDangKies" Relationship="Self.FK__PhieuDang__MaGoi__625A9A57" FromRole="GoiDichVu" ToRole="PhieuDangKy" />
+  </EntityType>
+  <EntityType Name="HashTag">
+    <Key>
+      <PropertyRef Name="MaHashTag" />
+    </Key>
+    <Property Name="MaHashTag" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TenTag" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Phims" Relationship="Self.HashTagCuaPhim" FromRole="HashTag" ToRole="Phim" />
+  </EntityType>
+  <EntityType Name="NgonNgu">
+    <Key>
+      <PropertyRef Name="MaNgonNgu" />
+    </Key>
+    <Property Name="MaNgonNgu" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TenNgonNgu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Phims" Relationship="Self.FK__Phim__MaNgonNgu__30F848ED" FromRole="NgonNgu" ToRole="Phim" />
+  </EntityType>
+  <EntityType Name="NguoiDung">
+    <Key>
+      <PropertyRef Name="MaNguoiDung" />
+    </Key>
+    <Property Name="MaNguoiDung" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="HoTen" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="GioiTinh" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="SDT" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="NgaySinh" Type="DateTime" Precision="3" />
+    <Property Name="TaiKhoan" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MatKhau" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="HinhAnhNguoiDung" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="DanhGiaPhims" Relationship="Self.FK__DanhGiaPh__MaNgu__4CA06362" FromRole="NguoiDung" ToRole="DanhGiaPhim" />
+    <NavigationProperty Name="PhieuDangKies" Relationship="Self.FK__PhieuDang__MaNgu__634EBE90" FromRole="NguoiDung" ToRole="PhieuDangKy" />
+  </EntityType>
+  <EntityType Name="PhieuDangKy">
+    <Key>
+      <PropertyRef Name="MaPhieuDangKy" />
+    </Key>
+    <Property Name="MaPhieuDangKy" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MaGoiDV" Type="Int32" />
+    <Property Name="MaNguoiDung" Type="Int32" />
+    <Property Name="NgayThanhToan" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="NgayHetHan" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="KhuyenMai" Type="Double" />
+    <Property Name="ThanhTien" Type="Decimal" Precision="19" Scale="4" />
+    <NavigationProperty Name="GoiDichVu" Relationship="Self.FK__PhieuDang__MaGoi__625A9A57" FromRole="PhieuDangKy" ToRole="GoiDichVu" />
+    <NavigationProperty Name="NguoiDung" Relationship="Self.FK__PhieuDang__MaNgu__634EBE90" FromRole="PhieuDangKy" ToRole="NguoiDung" />
+  </EntityType>
+  <EntityType Name="Phim">
+    <Key>
+      <PropertyRef Name="MaPhim" />
+    </Key>
+    <Property Name="MaPhim" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TenPhim" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="NgaySanXuat" Type="DateTime" Precision="3" />
+    <Property Name="NoiDungPhim" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="NoiDungPhimTomTat" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="DiemIMDB" Type="Double" />
+    <Property Name="LuotXem" Type="Int32" />
+    <Property Name="ThoiLuong" Type="Int32" />
+    <Property Name="HinhBanner" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="LinkPhim" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="LinkPhimVip" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="TrailerPhim" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="MaNuoc" Type="Int32" />
+    <Property Name="MaNgonNgu" Type="Int32" />
+    <NavigationProperty Name="DanhGiaPhims" Relationship="Self.FK__DanhGiaPh__MaPhi__4BAC3F29" FromRole="Phim" ToRole="DanhGiaPhim" />
+    <NavigationProperty Name="DatNuoc" Relationship="Self.FK__Phim__MaNuoc__300424B4" FromRole="Phim" ToRole="DatNuoc" />
+    <NavigationProperty Name="DienVienDongPhims" Relationship="Self.FK__DienVienD__MaPhi__1DB06A4F" FromRole="Phim" ToRole="DienVienDongPhim" />
+    <NavigationProperty Name="NgonNgu" Relationship="Self.FK__Phim__MaNgonNgu__30F848ED" FromRole="Phim" ToRole="NgonNgu" />
+    <NavigationProperty Name="DaoDiens" Relationship="Self.DaoDienCuaPhim" FromRole="Phim" ToRole="DaoDien" />
+    <NavigationProperty Name="HashTags" Relationship="Self.HashTagCuaPhim" FromRole="Phim" ToRole="HashTag" />
+    <NavigationProperty Name="TheLoais" Relationship="Self.TheLoaiCuaPhim" FromRole="Phim" ToRole="TheLoai" />
+  </EntityType>
+  <EntityType Name="TheLoai">
+    <Key>
+      <PropertyRef Name="MaTheLoai" />
+    </Key>
+    <Property Name="MaTheLoai" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TenTheLoai" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Phims" Relationship="Self.TheLoaiCuaPhim" FromRole="TheLoai" ToRole="Phim" />
+  </EntityType>
+  <Association Name="FK__DanhGiaPh__MaNgu__4CA06362">
+    <End Role="NguoiDung" Type="Self.NguoiDung" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="DanhGiaPhim" Type="Self.DanhGiaPhim" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NguoiDung">
+        <PropertyRef Name="MaNguoiDung" />
+      </Principal>
+      <Dependent Role="DanhGiaPhim">
+        <PropertyRef Name="MaNguoiDung" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__DanhGiaPh__MaPhi__4BAC3F29">
+    <End Role="Phim" Type="Self.Phim" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="DanhGiaPhim" Type="Self.DanhGiaPhim" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Phim">
+        <PropertyRef Name="MaPhim" />
+      </Principal>
+      <Dependent Role="DanhGiaPhim">
+        <PropertyRef Name="MaPhim" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Phim__MaNuoc__300424B4">
+    <End Role="DatNuoc" Type="Self.DatNuoc" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Phim" Type="Self.Phim" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DatNuoc">
+        <PropertyRef Name="MaNuoc" />
+      </Principal>
+      <Dependent Role="Phim">
+        <PropertyRef Name="MaNuoc" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__DienVienD__MaDie__1EA48E88">
+    <End Role="DienVien" Type="Self.DienVien" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="DienVienDongPhim" Type="Self.DienVienDongPhim" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DienVien">
+        <PropertyRef Name="MaDienVien" />
+      </Principal>
+      <Dependent Role="DienVienDongPhim">
+        <PropertyRef Name="MaDienVien" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__DienVienD__MaPhi__1DB06A4F">
+    <End Role="Phim" Type="Self.Phim" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="DienVienDongPhim" Type="Self.DienVienDongPhim" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Phim">
+        <PropertyRef Name="MaPhim" />
+      </Principal>
+      <Dependent Role="DienVienDongPhim">
+        <PropertyRef Name="MaPhim" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__PhieuDang__MaGoi__625A9A57">
+    <End Role="GoiDichVu" Type="Self.GoiDichVu" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="PhieuDangKy" Type="Self.PhieuDangKy" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="GoiDichVu">
+        <PropertyRef Name="MaGoiDV" />
+      </Principal>
+      <Dependent Role="PhieuDangKy">
+        <PropertyRef Name="MaGoiDV" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Phim__MaNgonNgu__30F848ED">
+    <End Role="NgonNgu" Type="Self.NgonNgu" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Phim" Type="Self.Phim" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NgonNgu">
+        <PropertyRef Name="MaNgonNgu" />
+      </Principal>
+      <Dependent Role="Phim">
+        <PropertyRef Name="MaNgonNgu" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__PhieuDang__MaNgu__634EBE90">
+    <End Role="NguoiDung" Type="Self.NguoiDung" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="PhieuDangKy" Type="Self.PhieuDangKy" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NguoiDung">
+        <PropertyRef Name="MaNguoiDung" />
+      </Principal>
+      <Dependent Role="PhieuDangKy">
+        <PropertyRef Name="MaNguoiDung" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="DaoDienCuaPhim">
+    <End Role="DaoDien" Type="Self.DaoDien" Multiplicity="*" />
+    <End Role="Phim" Type="Self.Phim" Multiplicity="*" />
+  </Association>
+  <Association Name="HashTagCuaPhim">
+    <End Role="HashTag" Type="Self.HashTag" Multiplicity="*" />
+    <End Role="Phim" Type="Self.Phim" Multiplicity="*" />
+  </Association>
+  <Association Name="TheLoaiCuaPhim">
+    <End Role="Phim" Type="Self.Phim" Multiplicity="*" />
+    <End Role="TheLoai" Type="Self.TheLoai" Multiplicity="*" />
+  </Association>
+  <EntityContainer Name="TwooneEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Admins" EntityType="Self.Admin" />
+    <EntitySet Name="DanhGiaPhims" EntityType="Self.DanhGiaPhim" />
+    <EntitySet Name="DaoDiens" EntityType="Self.DaoDien" />
+    <EntitySet Name="DatNuocs" EntityType="Self.DatNuoc" />
+    <EntitySet Name="DienViens" EntityType="Self.DienVien" />
+    <EntitySet Name="DienVienDongPhims" EntityType="Self.DienVienDongPhim" />
+    <EntitySet Name="GoiDichVus" EntityType="Self.GoiDichVu" />
+    <EntitySet Name="HashTags" EntityType="Self.HashTag" />
+    <EntitySet Name="NgonNgus" EntityType="Self.NgonNgu" />
+    <EntitySet Name="NguoiDungs" EntityType="Self.NguoiDung" />
+    <EntitySet Name="PhieuDangKies" EntityType="Self.PhieuDangKy" />
+    <EntitySet Name="Phims" EntityType="Self.Phim" />
+    <EntitySet Name="TheLoais" EntityType="Self.TheLoai" />
+    <AssociationSet Name="FK__DanhGiaPh__MaNgu__4CA06362" Association="Self.FK__DanhGiaPh__MaNgu__4CA06362">
+      <End Role="NguoiDung" EntitySet="NguoiDungs" />
+      <End Role="DanhGiaPhim" EntitySet="DanhGiaPhims" />
+    </AssociationSet>
+    <AssociationSet Name="FK__DanhGiaPh__MaPhi__4BAC3F29" Association="Self.FK__DanhGiaPh__MaPhi__4BAC3F29">
+      <End Role="Phim" EntitySet="Phims" />
+      <End Role="DanhGiaPhim" EntitySet="DanhGiaPhims" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Phim__MaNuoc__300424B4" Association="Self.FK__Phim__MaNuoc__300424B4">
+      <End Role="DatNuoc" EntitySet="DatNuocs" />
+      <End Role="Phim" EntitySet="Phims" />
+    </AssociationSet>
+    <AssociationSet Name="FK__DienVienD__MaDie__1EA48E88" Association="Self.FK__DienVienD__MaDie__1EA48E88">
+      <End Role="DienVien" EntitySet="DienViens" />
+      <End Role="DienVienDongPhim" EntitySet="DienVienDongPhims" />
+    </AssociationSet>
+    <AssociationSet Name="FK__DienVienD__MaPhi__1DB06A4F" Association="Self.FK__DienVienD__MaPhi__1DB06A4F">
+      <End Role="Phim" EntitySet="Phims" />
+      <End Role="DienVienDongPhim" EntitySet="DienVienDongPhims" />
+    </AssociationSet>
+    <AssociationSet Name="FK__PhieuDang__MaGoi__625A9A57" Association="Self.FK__PhieuDang__MaGoi__625A9A57">
+      <End Role="GoiDichVu" EntitySet="GoiDichVus" />
+      <End Role="PhieuDangKy" EntitySet="PhieuDangKies" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Phim__MaNgonNgu__30F848ED" Association="Self.FK__Phim__MaNgonNgu__30F848ED">
+      <End Role="NgonNgu" EntitySet="NgonNgus" />
+      <End Role="Phim" EntitySet="Phims" />
+    </AssociationSet>
+    <AssociationSet Name="FK__PhieuDang__MaNgu__634EBE90" Association="Self.FK__PhieuDang__MaNgu__634EBE90">
+      <End Role="NguoiDung" EntitySet="NguoiDungs" />
+      <End Role="PhieuDangKy" EntitySet="PhieuDangKies" />
+    </AssociationSet>
+    <AssociationSet Name="DaoDienCuaPhim" Association="Self.DaoDienCuaPhim">
+      <End Role="DaoDien" EntitySet="DaoDiens" />
+      <End Role="Phim" EntitySet="Phims" />
+    </AssociationSet>
+    <AssociationSet Name="HashTagCuaPhim" Association="Self.HashTagCuaPhim">
+      <End Role="HashTag" EntitySet="HashTags" />
+      <End Role="Phim" EntitySet="Phims" />
+    </AssociationSet>
+    <AssociationSet Name="TheLoaiCuaPhim" Association="Self.TheLoaiCuaPhim">
+      <End Role="Phim" EntitySet="Phims" />
+      <End Role="TheLoai" EntitySet="TheLoais" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
